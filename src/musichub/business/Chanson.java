@@ -50,5 +50,17 @@ public class Chanson extends AbstractOeuvre implements IJouable  {
         this.genre = genre;
     }
 
+    public String toString() {
+        return "---------\n"
+            + "Chanson :\n"
+            + "id = " + this.getId() + "\n"
+            + "titre = " + this.getTitre() + "\n"
+            + "duree = " + this.getDuree() + "\n"
+            + "artiste = " + this.getArtiste() + "\n"
+            + "contenu = " + this.getContenu() + "\n"
+            + "genre = " + this.getGenre() + "\n"
+            + "date = " + this.getDate();
+    }
+
 }
 

@@ -48,5 +48,17 @@ public class LivreAudio extends AbstractOeuvre implements IJouable {
 
     public void setCategorie (Categorie categorie) {
         this.categorie = categorie;
-    } 
+    }
+
+    public String toString() {
+        return "---------\n"
+            + "LivreAudio :\n"
+            + "id = " + this.getId() + "\n"
+            + "titre = " + this.getTitre() + "\n"
+            + "duree = " + this.getDuree() + "\n"
+            + "auteur = " + this.getAuteur() + "\n"
+            + "contenu = " + this.getContenu() + "\n"
+            + "langue = " + this.getLangue() + "\n"
+            + "categorie = " + this.getCategorie();
+    }
 }
