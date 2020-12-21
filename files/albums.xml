@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Albums>
+    <Album>
+        <id>1</id>
+        <titre>xxxx</titre>
+        <duree>00</duree>
+        <Chansons>
+            <Chanson>
+                <id>1</id>
+                <titre>xxxx</titre>
+                <duree>00</duree>
+                <artiste>xxxx</artiste>
+                <contenu>xxxx</contenu>
+                <genre>xxxx</genre>
+                <date>jj-mmm-aaaa</date>
+            </Chanson>
+
+            <Chanson>
+                <id>2</id>
+                <titre>xxxx</titre>
+                <duree>00</duree>
+                <artiste>xxxx</artiste>
+                <contenu>xxxx</contenu>
+                <genre>xxxx</genre>
+                <date>jj-mmm-aaaa</date>
+            </Chanson>
+        </Chansons>
+        <artiste>xxxx</artiste>
+        <date>jj-mmm-aaaa</date>
+    </Album>
+    <Album>
+        <id>1</id>
+        <titre>xxxx</titre>
+        <duree>00</duree>
+        <Chansons>
+            <Chanson>
+                <id>1</id>
+                <titre>xxxx</titre>
+                <duree>00</duree>
+                <artiste>xxxx</artiste>
+                <contenu>xxxx</contenu>
+                <genre>xxxx</genre>
+                <date>jj-mmm-aaaa</date>
+            </Chanson>
+
+            <Chanson>
+                <id>2</id>
+                <titre>xxxx</titre>
+                <duree>00</duree>
+                <artiste>xxxx</artiste>
+                <contenu>xxxx</contenu>
+                <genre>xxxx</genre>
+                <date>jj-mmm-aaaa</date>
+            </Chanson>
+        </Chansons>
+        <artiste>xxxx</artiste>
+        <date>jj-mmm-aaaa</date>
+    </Album>
+</Albums>
