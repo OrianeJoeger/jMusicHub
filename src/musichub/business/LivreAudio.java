@@ -51,8 +51,7 @@ public class LivreAudio extends AbstractOeuvre implements IJouable {
     }
 
     public String toString() {
-        return "---------\n"
-            + "LivreAudio :\n"
+        return "\nLivreAudio :\n"
             + "id = " + this.getId() + "\n"
             + "titre = " + this.getTitre() + "\n"
             + "duree = " + this.getDuree() + "\n"

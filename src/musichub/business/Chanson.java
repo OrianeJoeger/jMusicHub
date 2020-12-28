@@ -51,8 +51,7 @@ public class Chanson extends AbstractOeuvre implements IJouable  {
     }
 
     public String toString() {
-        return "---------\n"
-            + "Chanson :\n"
+        return "\nChanson:\n"
             + "id = " + this.getId() + "\n"
             + "titre = " + this.getTitre() + "\n"
             + "duree = " + this.getDuree() + "\n"

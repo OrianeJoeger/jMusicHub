@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Playlists>
+    <Playlist>
+        <id>1</id>
+        <nom>Playlist1</nom>
+        <Chansons>
+            <Chanson>
+                <id>1</id>
+                <titre>Vertigo</titre>
+                <duree>138</duree>
+                <artiste>BONES</artiste>
+                <contenu>xxxx</contenu>
+                <genre>ROCK</genre>
+                <date>25-fev-2020</date>
+            </Chanson>
+        </Chansons>
+        <LivresAudio>
+            <LivreAudio>
+                <id>1</id>
+                <titre>Le Comte de Monte Cristo Séquence 1</titre>
+                <duree>780</duree>
+                <auteur>Francis Perrin</auteur>
+                <contenu>xxxxx</contenu>
+                <langue>FRANCAIS</langue>
+                <categorie>ROMAN</categorie>
+            </LivreAudio>
+            <LivreAudio>
+                <id>2</id>
+                <titre>Les anciens de Saint Loup - Intro</titre>
+                <duree>190</duree>
+                <auteur>Pierre Very</auteur>
+                <contenu>xxxxx</contenu>
+                <langue>FRANCAIS</langue>
+                <categorie>ROMAN</categorie>
+            </LivreAudio>
+        </LivresAudio>
+    </Playlist>
+    <Playlist>
+        <id>2</id>
+        <nom>Playlist2</nom>
+        <Chansons>
+        <Chanson>
+            <id>1</id>
+            <titre>Vertigo</titre>
+            <duree>138</duree>
+            <artiste>BONES</artiste>
+            <contenu>xxxx</contenu>
+            <genre>ROCK</genre>
+            <date>25-fev-2020</date>
+        </Chanson>
+        <Chanson>
+            <id>2</id>
+            <titre>A Celtic Lore</titre>
+            <duree>200</duree>
+            <artiste>Adrian Von Ziegler</artiste>
+            <contenu>xxxx</contenu>
+            <genre>CLASSIQUE</genre>
+            <date>12-dec-2012</date>
+        </Chanson>
+    </Chansons>
+    <LivresAudio>
+        <LivreAudio>
+            <id>1</id>
+            <titre>Le Comte de Monte Cristo Séquence 1</titre>
+            <duree>780</duree>
+            <auteur>Francis Perrin</auteur>
+            <contenu>xxxxx</contenu>
+            <langue>FRANCAIS</langue>
+            <categorie>ROMAN</categorie>
+        </LivreAudio>
+    </LivresAudio>
+    </Playlist>
+</Playlists>

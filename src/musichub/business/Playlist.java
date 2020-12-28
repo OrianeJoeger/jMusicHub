@@ -1,7 +1,6 @@
 package musichub.business;
 
 import  java.util.Collection;
-import  java.util.LinkedList;
 
 public class Playlist {
 
@@ -14,7 +13,7 @@ public class Playlist {
     public Playlist(int id, String nom, Collection<IJouable> liste) {
         this.id = id;
         this.nom = nom;
-        this.liste = new LinkedList<IJouable> ();
+        this.liste = liste;
     }
 
     public int getId() {
@@ -43,6 +42,13 @@ public class Playlist {
 
     public void add(IJouable element) {
         this.liste.add(element);
+    }
+
+    public String toString() {
+        return "Playlist :\n"
+            + "id = " + this.getId() + "\n"
+            + "titre = " + this.getNom() + "\n"
+            + "liste = " + this.getListe();
     }
 
 }

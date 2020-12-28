@@ -3,7 +3,7 @@
     <Album>
         <id>1</id>
         <titre>xxxx</titre>
-        <duree>00</duree>
+        <duree>15</duree>
         <Chansons>
             <Chanson>
                 <id>1</id>
@@ -11,7 +11,7 @@
                 <duree>00</duree>
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
-                <genre>xxxx</genre>
+                <genre>RAP</genre>
                 <date>jj-mmm-aaaa</date>
             </Chanson>
 
@@ -21,7 +21,7 @@
                 <duree>00</duree>
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
-                <genre>xxxx</genre>
+                <genre>HIPHOP</genre>
                 <date>jj-mmm-aaaa</date>
             </Chanson>
         </Chansons>
@@ -29,27 +29,27 @@
         <date>jj-mmm-aaaa</date>
     </Album>
     <Album>
-        <id>1</id>
+        <id>2</id>
         <titre>xxxx</titre>
-        <duree>00</duree>
+        <duree>60</duree>
         <Chansons>
             <Chanson>
-                <id>1</id>
+                <id>3</id>
                 <titre>xxxx</titre>
                 <duree>00</duree>
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
-                <genre>xxxx</genre>
+                <genre>CLASSIQUE</genre>
                 <date>jj-mmm-aaaa</date>
             </Chanson>
 
             <Chanson>
-                <id>2</id>
+                <id>4</id>
                 <titre>xxxx</titre>
                 <duree>00</duree>
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
-                <genre>xxxx</genre>
+                <genre>POP</genre>
                 <date>jj-mmm-aaaa</date>
             </Chanson>
         </Chansons>
