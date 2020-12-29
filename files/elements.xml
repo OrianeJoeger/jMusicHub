@@ -8,7 +8,7 @@
             <artiste>BONES</artiste>
             <contenu>xxxx</contenu>
             <genre>ROCK</genre>
-            <date>25-fev-2020</date>
+            <date>1995-02-23</date>
         </Chanson>
         <Chanson>
             <id>2</id>
@@ -17,7 +17,7 @@
             <artiste>Adrian Von Ziegler</artiste>
             <contenu>xxxx</contenu>
             <genre>CLASSIQUE</genre>
-            <date>12-dec-2012</date>
+            <date>1997-04-20</date>
         </Chanson>
     </Chansons>
     <LivresAudio>

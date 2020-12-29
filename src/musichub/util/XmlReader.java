@@ -15,9 +15,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-import java.util.Collection;
-import java.util.LinkedList;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class XmlReader {
 
@@ -28,10 +30,10 @@ public class XmlReader {
         this.dBuilder = dbFactory.newDocumentBuilder();
     }
 
-    private Collection<IJouable> extractChanson(NodeList nList) {
+    private List<Chanson> extractChanson(NodeList nList) {
 
         String id, titre, duree, artiste, contenu, genre, date;
-        Collection<IJouable> chansons = new LinkedList<IJouable> ();
+        List<Chanson> chansons = new LinkedList<Chanson> ();
 
         for (int temp = 0; temp < nList.getLength(); temp++) {
             Node nNode = nList.item(temp);
@@ -56,14 +58,15 @@ public class XmlReader {
             );
             chansons.add(chanson);
         }
+        Collections.sort(chansons);
 
         return chansons;
     }
 
-    private Collection<IJouable> extractLivreAudio(NodeList nList) {
+    private List<LivreAudio> extractLivreAudio(NodeList nList) {
 
         String id, titre, duree, auteur, contenu, langue, categorie;
-        Collection<IJouable> livresaudio = new LinkedList<IJouable> ();
+        List<LivreAudio> livresaudio = new LinkedList<LivreAudio> ();
 
         for (int temp = 0; temp < nList.getLength(); temp++) {
             Node nNode = nList.item(temp);
@@ -88,13 +91,15 @@ public class XmlReader {
             );
             livresaudio.add(livreaudio);
         }
+        Collections.sort(livresaudio);
 
         return livresaudio;
     }
 
-    public Collection<IJouable> getChansons() throws Exception {
+    public Collection<Chanson> getChansons() throws Exception {
 
-        Collection<IJouable> chansons = null;
+        List<Chanson> chansons = null;
+
         Document doc = this.dBuilder.parse("files/elements.xml");
         doc.getDocumentElement().normalize();
 
@@ -104,9 +109,9 @@ public class XmlReader {
         return chansons;
     }
 
-    public Collection<IJouable> getLivreAudios() throws Exception {
+    public Collection<LivreAudio> getLivreAudios() throws Exception {
 
-        Collection<IJouable> livresaudio = null;
+        Collection<LivreAudio> livresaudio = null;
         Document doc = this.dBuilder.parse("files/elements.xml");
         doc.getDocumentElement().normalize();
 
@@ -119,8 +124,8 @@ public class XmlReader {
     public Collection<Album> getAlbums() throws Exception {
 
         String id, titre, duree, artiste, date;
-        Collection<IJouable> chansons;
-        Collection<Album> albums = new LinkedList<Album> ();
+        List<Chanson> chansons;
+        List<Album> albums = new LinkedList<Album> ();
         
         Document doc = this.dBuilder.parse("files/albums.xml");
         doc.getDocumentElement().normalize();
@@ -147,6 +152,7 @@ public class XmlReader {
             );
             albums.add(album);
         }
+        Collections.sort(albums);
 
         return albums;
     }
@@ -154,8 +160,10 @@ public class XmlReader {
     public Collection<Playlist> getPlaylist() throws Exception {
 
         String id, titre;
-        Collection<IJouable> elements = null;
-        Collection<Playlist> playlists = new LinkedList<Playlist> ();
+        List<Chanson> chansons = null;
+        List<LivreAudio> livresaudio = null;
+        Collection<IJouable> elements = new LinkedList<IJouable> ();
+        List<Playlist> playlists = new LinkedList<Playlist> ();
         
         Document doc = this.dBuilder.parse("files/playlists.xml");
         doc.getDocumentElement().normalize();
@@ -166,11 +174,11 @@ public class XmlReader {
             Element eElement = (Element) nNode;
 
             id = eElement.getElementsByTagName("id").item(0).getTextContent();
-            titre = eElement.getElementsByTagName("titre").item(0).getTextContent();
-            elements = this.extractChanson(eElement.getElementsByTagName("Chanson"));
-            elements.addAll(this.extractLivreAudio(eElement.getElementsByTagName("LivreAudio")));
-            // System.out.println(elements);
-            // System.out.println("---------------");
+            titre = eElement.getElementsByTagName("nom").item(0).getTextContent();
+            chansons = this.extractChanson(eElement.getElementsByTagName("Chanson"));
+            livresaudio = this.extractLivreAudio(eElement.getElementsByTagName("LivreAudio"));
+            elements.addAll(chansons);
+            elements.addAll(livresaudio);
 
             Playlist playlist = new Playlist(
                 Integer.parseInt(id),
@@ -179,6 +187,7 @@ public class XmlReader {
             );
             playlists.add(playlist);
         }
+        Collections.sort(playlists);
 
         return playlists;
     }

@@ -4,6 +4,8 @@
         <id>1</id>
         <titre>xxxx</titre>
         <duree>15</duree>
+        <artiste>xxxx</artiste>
+        <date>2001-04-20</date>
         <Chansons>
             <Chanson>
                 <id>1</id>
@@ -12,7 +14,7 @@
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
                 <genre>RAP</genre>
-                <date>jj-mmm-aaaa</date>
+                <date>1995-02-23</date>
             </Chanson>
 
             <Chanson>
@@ -22,16 +24,16 @@
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
                 <genre>HIPHOP</genre>
-                <date>jj-mmm-aaaa</date>
+                <date>1997-04-20</date>
             </Chanson>
         </Chansons>
-        <artiste>xxxx</artiste>
-        <date>jj-mmm-aaaa</date>
     </Album>
     <Album>
         <id>2</id>
         <titre>xxxx</titre>
         <duree>60</duree>
+        <artiste>xxxx</artiste>
+        <date>2000-04-20</date>
         <Chansons>
             <Chanson>
                 <id>3</id>
@@ -40,7 +42,7 @@
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
                 <genre>CLASSIQUE</genre>
-                <date>jj-mmm-aaaa</date>
+                <date>1997-04-20</date>
             </Chanson>
 
             <Chanson>
@@ -50,10 +52,8 @@
                 <artiste>xxxx</artiste>
                 <contenu>xxxx</contenu>
                 <genre>POP</genre>
-                <date>jj-mmm-aaaa</date>
+                <date>1997-04-19</date>
             </Chanson>
         </Chansons>
-        <artiste>xxxx</artiste>
-        <date>jj-mmm-aaaa</date>
     </Album>
 </Albums>

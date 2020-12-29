@@ -1,6 +1,6 @@
 package musichub.business;
 
-public class LivreAudio extends AbstractOeuvre implements IJouable {
+public class LivreAudio extends AbstractOeuvre implements IJouable, Comparable<LivreAudio>{
     
     private String auteur;
 
@@ -59,5 +59,9 @@ public class LivreAudio extends AbstractOeuvre implements IJouable {
             + "contenu = " + this.getContenu() + "\n"
             + "langue = " + this.getLangue() + "\n"
             + "categorie = " + this.getCategorie();
+    }
+
+    public int compareTo(LivreAudio livreaudio) {
+        return this.getAuteur().compareTo(livreaudio.getAuteur());
     }
 }

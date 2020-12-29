@@ -1,6 +1,6 @@
 package musichub.business;
 
-public class Chanson extends AbstractOeuvre implements IJouable  {
+public class Chanson extends AbstractOeuvre implements IJouable, Comparable<Chanson> {
     
     private String artiste;
 
@@ -61,5 +61,8 @@ public class Chanson extends AbstractOeuvre implements IJouable  {
             + "date = " + this.getDate();
     }
 
+    public int compareTo(Chanson chanson) {
+        return this.getGenre().compareTo(chanson.getGenre());
+    }
 }
 

@@ -2,7 +2,7 @@ package musichub.business;
 
 import  java.util.Collection;
 
-public class Playlist {
+public class Playlist implements Comparable<Playlist> {
 
     private int id;
 
@@ -45,10 +45,14 @@ public class Playlist {
     }
 
     public String toString() {
-        return "Playlist :\n"
+        return "\nPlaylist :\n"
             + "id = " + this.getId() + "\n"
-            + "titre = " + this.getNom() + "\n"
+            + "nom = " + this.getNom() + "\n"
             + "liste = " + this.getListe();
+    }
+
+    public int compareTo(Playlist playlist) {
+        return this.getNom().compareTo(playlist.getNom());
     }
 
 }
