@@ -52,12 +52,12 @@ public class Album extends AbstractOeuvre implements Comparable<Album> {
 
     public String toString() {
         return "\nAlbum :\n"
-            + "id = " + this.getId() + "\n"
-            + "titre = " + this.getTitre() + "\n"
-            + "duree = " + this.getDuree() + "\n"
-            + "artiste = " + this.getArtiste() + "\n"
-            + "date = " + this.getDate() + "\n"
-            + "chansons = " + this.getChanson();
+            + "     id = " + this.getId() + "\n"
+            + "     titre = " + this.getTitre() + "\n"
+            + "     duree = " + this.getDuree() + "\n"
+            + "     artiste = " + this.getArtiste() + "\n"
+            + "     date = " + this.getDate() + "\n"
+            + "     chansons = " + this.getChanson() + "\n\n";
     }
 
     public int compareTo(Album album) {

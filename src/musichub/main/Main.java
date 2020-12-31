@@ -76,27 +76,32 @@ public class Main {
         System.out.println("q   :   Quitter le programme");
     }
 
+    private void run () {
+        Scanner sc = new Scanner(System.in);
+        
+        boolean again = true;
+        String cmd = null;
+
+        this.menu();
+        while (again) {
+            System.out.print("\nEntrez une commande $> ");
+            cmd = sc.nextLine();
+            again =  this.commandsHandlding(cmd);
+        }
+        sc.close();
+    } 
+
     public static void main(String[] args)  {
 
         System.out.println("\nBienvenue dans JMUSICHUB");
 
         try {
-            Scanner sc = new Scanner(System.in);
             Main application = new Main ();
-            boolean again = true;
-            String cmd = null;
-
-            application.menu();
-            while (again) {
-                System.out.print("\nEntrez une commande $> ");
-                cmd = sc.nextLine();
-                again =  application.commandsHandlding(cmd);
-            }
-            sc.close();
+            application.run(); 
         } catch (Exception e) {
             System.err.println(e);
         }
-
+        
         System.out.println("\nMerci d'avoir utilisé nos services.");
         System.out.println("A bientot !\n");
     }

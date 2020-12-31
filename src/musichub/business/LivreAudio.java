@@ -52,13 +52,13 @@ public class LivreAudio extends AbstractOeuvre implements IJouable, Comparable<L
 
     public String toString() {
         return "\nLivreAudio :\n"
-            + "id = " + this.getId() + "\n"
-            + "titre = " + this.getTitre() + "\n"
-            + "duree = " + this.getDuree() + "\n"
-            + "auteur = " + this.getAuteur() + "\n"
-            + "contenu = " + this.getContenu() + "\n"
-            + "langue = " + this.getLangue() + "\n"
-            + "categorie = " + this.getCategorie();
+            + "     id = " + this.getId() + "\n"
+            + "     titre = " + this.getTitre() + "\n"
+            + "     duree = " + this.getDuree() + "\n"
+            + "     auteur = " + this.getAuteur() + "\n"
+            + "     contenu = " + this.getContenu() + "\n"
+            + "     langue = " + this.getLangue() + "\n"
+            + "     categorie = " + this.getCategorie()+ "\n";
     }
 
     public int compareTo(LivreAudio livreaudio) {

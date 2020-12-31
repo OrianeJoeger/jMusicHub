@@ -50,9 +50,9 @@ public class Playlist implements Comparable<Playlist> {
 
     public String toString() {
         return "\nPlaylist :\n"
-            + "id = " + this.getId() + "\n"
-            + "nom = " + this.getNom() + "\n"
-            + "liste = " + this.getListe();
+            + "     id = " + this.getId() + "\n"
+            + "     nom = " + this.getNom() + "\n"
+            + "     liste = " + this.getListe() + "\n\n";
     }
 
     public int compareTo(Playlist playlist) {

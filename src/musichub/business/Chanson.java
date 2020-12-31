@@ -52,13 +52,13 @@ public class Chanson extends AbstractOeuvre implements IJouable, Comparable<Chan
 
     public String toString() {
         return "\nChanson:\n"
-            + "id = " + this.getId() + "\n"
-            + "titre = " + this.getTitre() + "\n"
-            + "duree = " + this.getDuree() + "\n"
-            + "artiste = " + this.getArtiste() + "\n"
-            + "contenu = " + this.getContenu() + "\n"
-            + "genre = " + this.getGenre() + "\n"
-            + "date = " + this.getDate();
+            + "     id = " + this.getId() + "\n"
+            + "     titre = " + this.getTitre() + "\n"
+            + "     duree = " + this.getDuree() + "\n"
+            + "     artiste = " + this.getArtiste() + "\n"
+            + "     contenu = " + this.getContenu() + "\n"
+            + "     genre = " + this.getGenre() + "\n"
+            + "     date = " + this.getDate() + "\n";
     }
 
     public int compareTo(Chanson chanson) {
