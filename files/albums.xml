@@ -6,27 +6,24 @@
         <duree>15</duree>
         <artiste>xxxx</artiste>
         <date>2001-04-20</date>
-        <Chansons>
-            <Chanson>
-                <id>1</id>
-                <titre>xxxx</titre>
-                <duree>00</duree>
-                <artiste>xxxx</artiste>
-                <contenu>xxxx</contenu>
-                <genre>RAP</genre>
-                <date>1995-02-23</date>
-            </Chanson>
-
-            <Chanson>
-                <id>2</id>
-                <titre>xxxx</titre>
-                <duree>00</duree>
-                <artiste>xxxx</artiste>
-                <contenu>xxxx</contenu>
-                <genre>HIPHOP</genre>
-                <date>1997-04-20</date>
-            </Chanson>
-        </Chansons>
+        <Chanson>
+            <id>1</id>
+            <titre>xxxx</titre>
+            <duree>00</duree>
+            <artiste>xxxx</artiste>
+            <contenu>xxxx</contenu>
+            <genre>RAP</genre>
+            <date>1995-02-23</date>
+        </Chanson>
+        <Chanson>
+            <id>2</id>
+            <titre>xxxx</titre>
+            <duree>00</duree>
+            <artiste>xxxx</artiste>
+            <contenu>xxxx</contenu>
+            <genre>HIPHOP</genre>
+            <date>1997-04-20</date>
+        </Chanson>
     </Album>
     <Album>
         <id>2</id>
@@ -34,26 +31,23 @@
         <duree>60</duree>
         <artiste>xxxx</artiste>
         <date>2000-04-20</date>
-        <Chansons>
-            <Chanson>
-                <id>3</id>
-                <titre>xxxx</titre>
-                <duree>00</duree>
-                <artiste>xxxx</artiste>
-                <contenu>xxxx</contenu>
-                <genre>CLASSIQUE</genre>
-                <date>1997-04-20</date>
-            </Chanson>
-
-            <Chanson>
-                <id>4</id>
-                <titre>xxxx</titre>
-                <duree>00</duree>
-                <artiste>xxxx</artiste>
-                <contenu>xxxx</contenu>
-                <genre>POP</genre>
-                <date>1997-04-19</date>
-            </Chanson>
-        </Chansons>
+        <Chanson>
+            <id>3</id>
+            <titre>xxxx</titre>
+            <duree>00</duree>
+            <artiste>xxxx</artiste>
+            <contenu>xxxx</contenu>
+            <genre>CLASSIQUE</genre>
+            <date>1997-04-20</date>
+        </Chanson>
+        <Chanson>
+            <id>4</id>
+            <titre>xxxx</titre>
+            <duree>00</duree>
+            <artiste>xxxx</artiste>
+            <contenu>xxxx</contenu>
+            <genre>POP</genre>
+            <date>1997-04-19</date>
+        </Chanson>
     </Album>
 </Albums>

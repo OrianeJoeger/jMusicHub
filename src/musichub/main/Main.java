@@ -42,13 +42,14 @@ public class Main {
                 System.out.println(this.playlists);
                 break;
             case "h":
-                menu();
+                this.menu();
                 break;
             case "q":
                 again = false;
                 break;
             default:
                 System.out.println("Cette commande n'est pas prise en charge");
+                this.menu();
                 break;
             }
 

@@ -3,42 +3,37 @@
     <Playlist>
         <id>1</id>
         <nom>Playlist2</nom>
-        <Chansons>
-            <Chanson>
-                <id>1</id>
-                <titre>Vertigo</titre>
-                <duree>138</duree>
-                <artiste>BONES</artiste>
-                <contenu>xxxx</contenu>
-                <genre>ROCK</genre>
-                <date>1995-02-23</date>
-            </Chanson>
-        </Chansons>
-        <LivresAudio>
-            <LivreAudio>
-                <id>1</id>
-                <titre>Le Comte de Monte Cristo Séquence 1</titre>
-                <duree>780</duree>
-                <auteur>Francis Perrin</auteur>
-                <contenu>xxxxx</contenu>
-                <langue>FRANCAIS</langue>
-                <categorie>ROMAN</categorie>
-            </LivreAudio>
-            <LivreAudio>
-                <id>2</id>
-                <titre>Les anciens de Saint Loup - Intro</titre>
-                <duree>190</duree>
-                <auteur>Pierre Very</auteur>
-                <contenu>xxxxx</contenu>
-                <langue>FRANCAIS</langue>
-                <categorie>ROMAN</categorie>
-            </LivreAudio>
-        </LivresAudio>
+        <Chanson>
+            <id>1</id>
+            <titre>Vertigo</titre>
+            <duree>138</duree>
+            <artiste>BONES</artiste>
+            <contenu>xxxx</contenu>
+            <genre>ROCK</genre>
+            <date>1995-02-23</date>
+        </Chanson>
+        <LivreAudio>
+            <id>1</id>
+            <titre>Le Comte de Monte Cristo Séquence 1</titre>
+            <duree>780</duree>
+            <auteur>Francis Perrin</auteur>
+            <contenu>xxxxx</contenu>
+            <langue>FRANCAIS</langue>
+            <categorie>ROMAN</categorie>
+        </LivreAudio>
+        <LivreAudio>
+            <id>2</id>
+            <titre>Les anciens de Saint Loup - Intro</titre>
+            <duree>190</duree>
+            <auteur>Pierre Very</auteur>
+            <contenu>xxxxx</contenu>
+            <langue>FRANCAIS</langue>
+            <categorie>ROMAN</categorie>
+        </LivreAudio>
     </Playlist>
     <Playlist>
         <id>2</id>
         <nom>Playlist1</nom>
-        <Chansons>
         <Chanson>
             <id>1</id>
             <titre>Vertigo</titre>
@@ -57,8 +52,6 @@
             <genre>CLASSIQUE</genre>
             <date>1997-04-20</date>
         </Chanson>
-    </Chansons>
-    <LivresAudio>
         <LivreAudio>
             <id>1</id>
             <titre>Le Comte de Monte Cristo Séquence 1</titre>
@@ -68,6 +61,5 @@
             <langue>FRANCAIS</langue>
             <categorie>ROMAN</categorie>
         </LivreAudio>
-    </LivresAudio>
     </Playlist>
 </Playlists>
