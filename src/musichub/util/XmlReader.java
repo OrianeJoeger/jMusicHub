@@ -157,7 +157,7 @@ public class XmlReader {
         return albums;
     }
 
-    public Collection<Playlist> getPlaylist() throws Exception {
+    public Collection<Playlist> getPlaylists() throws Exception {
 
         String id, titre;
         List<Chanson> chansons = null;
