@@ -12,7 +12,7 @@ public class XmlWriter {
     }
 
     private void saveElements(Chanson chansons, LivreAudio livresaudio) {
-        //TODO: sauvegarde des chansons et livresaudio dans le fichier elements.xml
+        //TODO: a des chansons et livresaudio dans le fichier elements.xml
     }
 
     private void saveAlbums(Album albums) {

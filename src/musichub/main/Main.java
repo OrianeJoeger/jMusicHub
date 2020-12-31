@@ -1,47 +1,61 @@
 package musichub.main;
 
+import java.util.Collection;
 import java.util.Scanner;
+
+import musichub.business.Album;
+import musichub.business.Chanson;
+import musichub.business.LivreAudio;
+import musichub.business.Playlist;
 import musichub.util.XmlReader;
 
 public class Main {
 
-    public static boolean commandsHandlding(String cmd) {
+    Collection<Chanson> chansons;
+    Collection<LivreAudio> livresAudio;
+    Collection<Album> albums;
+    Collection<Playlist> playlists;
+
+    public Main () throws Exception {
+        XmlReader reader = new XmlReader();
+
+        this.chansons = reader.getChansons();
+        this.livresAudio = reader.getLivresAudio();
+        this.albums = reader.getAlbums();
+        this.playlists = reader.getPlaylists();
+    }
+
+    private boolean commandsHandlding(String cmd) {
         boolean again = true;
 
-        try {
-            XmlReader reader = new XmlReader();
-
-            switch(cmd) {
-                case "albums":
-                    System.out.println(reader.getAlbums());
-                    break;
-                case "chansons":
-                    System.out.println(reader.getChansons());
-                    break;
-                case "livres audio":
-                    System.out.println(reader.getLivreAudios());
-                    break;
-                case "playlists":
-                    System.out.println(reader.getPlaylists());
-                    break;
-                case "h":
-                    menu();
-                    break;
-                case "q":
-                    again = false;
-                    break;
-                default:
-                    System.out.println("Cette commande n'est pas prise en charge");
-                    break;
-              }
-        } catch (Exception e) {
-            System.err.println(e);
-        }
+        switch(cmd) {
+            case "albums":
+                System.out.println(this.albums);
+                break;
+            case "chansons":
+                System.out.println(this.chansons);
+                break;
+            case "livres audio":
+                System.out.println(this.livresAudio);
+                break;
+            case "playlists":
+                System.out.println(this.playlists);
+                break;
+            case "h":
+                menu();
+                break;
+            case "q":
+                again = false;
+                break;
+            default:
+                System.out.println("Cette commande n'est pas prise en charge");
+                break;
+            }
 
         return again;
     }
 
-    public static void menu () {
+    private void menu () {
         System.out.println("\nVoici la liste des commandes possibles : \n");
         System.out.println("--------- AFFICHAGE ---------");
         System.out.println("albums       : lister les albums ");
@@ -49,31 +63,39 @@ public class Main {
         System.out.println("livres audio : lister les livres audio ");
         System.out.println("playlists    : lister les playlists ");
         System.out.println("\n--------- AJOUT / SUPPRESSION ---------");
-        System.out.println("c : rajout d’une nouvelle chanson ");
-        System.out.println("a : rajout d’un nouvel album ");
-        System.out.println("+ : rajout d’une chanson existante à un album");
-        System.out.println("l : rajout d’un nouveau livre audio");
-        System.out.println("p : création d’une nouvelle playlist à partir de chansons et livres audio existants");
-        System.out.println("- : suppression d’une playlist");
-        System.out.println("s : sauvegarde des playlists, des albums, des chansons et des livres audios dans les fichiers xml respectifs");
+        System.out.println("c   :   Ajouter une nouvelle chanson ");
+        System.out.println("a   :   Ajouter un nouvel album ");
+        System.out.println("+   :   Ajouter une chanson existante à un album");
+        System.out.println("l   :   Ajouter un nouveau livre audio");
+        System.out.println("p   :   Créer une nouvelle playlist à partir de chansons et livres audio existants");
+        System.out.println("-   :   Supprimer une playlist");
+        System.out.println("s   :   Sauvegarder les playlists, albums, hansons et livres audios dans leurs fichiers xml respectifs");
         System.out.println("\n--------- AUTRES ---------");
-        System.out.println("q : Quitter le programme");
-        System.out.println("h : aide avec les détails des commandes");
+        System.out.println("h   :   Afficher le détail des commandes");
+        System.out.println("q   :   Quitter le programme");
     }
 
     public static void main(String[] args)  {
-        System.out.println("\nBienvenue dans JMUSICHUB");
-        Scanner sc = new Scanner(System.in);
-        boolean again = true;
-        String cmd = null;
 
-        menu();
-        while (again) {
-            System.out.print("\nEntrez une commande $> ");
-            cmd = sc.nextLine();
-            again =  commandsHandlding(cmd);
+        System.out.println("\nBienvenue dans JMUSICHUB");
+
+        try {
+            Scanner sc = new Scanner(System.in);
+            Main application = new Main ();
+            boolean again = true;
+            String cmd = null;
+
+            application.menu();
+            while (again) {
+                System.out.print("\nEntrez une commande $> ");
+                cmd = sc.nextLine();
+                again =  application.commandsHandlding(cmd);
+            }
+            sc.close();
+        } catch (Exception e) {
+            System.err.println(e);
         }
-        sc.close();
+
         System.out.println("\nMerci d'avoir utilisé nos services.");
         System.out.println("A bientot !\n");
     }

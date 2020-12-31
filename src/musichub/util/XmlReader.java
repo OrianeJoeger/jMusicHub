@@ -109,7 +109,7 @@ public class XmlReader {
         return chansons;
     }
 
-    public Collection<LivreAudio> getLivreAudios() throws Exception {
+    public Collection<LivreAudio> getLivresAudio() throws Exception {
 
         Collection<LivreAudio> livresaudio = null;
         Document doc = this.dBuilder.parse("files/elements.xml");
