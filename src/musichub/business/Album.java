@@ -42,6 +42,14 @@ public class Album extends AbstractOeuvre implements Comparable<Album> {
         this.date = date;
     }
 
+    public void addChanson (Chanson chanson) {
+        //TODO: ajouter une chanson à un album
+    }
+
+    public void removeChanson (Chanson chanson) {
+        //TODO: supprimer une chanson d'un album
+    }
+
     public String toString() {
         return "\nAlbum :\n"
             + "id = " + this.getId() + "\n"

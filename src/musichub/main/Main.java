@@ -44,10 +44,10 @@ public class Main {
     public static void menu () {
         System.out.println("\nVoici la liste des commandes possibles : \n");
         System.out.println("--------- AFFICHAGE ---------");
-        System.out.println("albums : lister les albums ");
-        System.out.println("chansons : lister les chansons ");
+        System.out.println("albums       : lister les albums ");
+        System.out.println("chansons     : lister les chansons ");
         System.out.println("livres audio : lister les livres audio ");
-        System.out.println("playlists : lister les playlists ");
+        System.out.println("playlists    : lister les playlists ");
         System.out.println("\n--------- AJOUT / SUPPRESSION ---------");
         System.out.println("c : rajout d’une nouvelle chanson ");
         System.out.println("a : rajout d’un nouvel album ");

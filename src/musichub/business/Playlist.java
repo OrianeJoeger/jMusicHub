@@ -40,8 +40,12 @@ public class Playlist implements Comparable<Playlist> {
         this.liste = liste;
     }
 
-    public void add(IJouable element) {
+    public void addElement(IJouable element) {
         this.liste.add(element);
+    }
+
+    public void removeElement(IJouable element) {
+        //TODO: remove element from playslists
     }
 
     public String toString() {
