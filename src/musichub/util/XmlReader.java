@@ -162,7 +162,6 @@ public class XmlReader {
         String id, titre;
         List<Chanson> chansons = null;
         List<LivreAudio> livresaudio = null;
-        Collection<IJouable> elements = new LinkedList<IJouable> ();
         List<Playlist> playlists = new LinkedList<Playlist> ();
         
         Document doc = this.dBuilder.parse("files/playlists.xml");
@@ -172,6 +171,7 @@ public class XmlReader {
         for (int temp = 0; temp < nList.getLength(); temp++) {
             Node nNode = nList.item(temp);
             Element eElement = (Element) nNode;
+            Collection<IJouable> elements = new LinkedList<IJouable> ();
 
             id = eElement.getElementsByTagName("id").item(0).getTextContent();
             titre = eElement.getElementsByTagName("nom").item(0).getTextContent();

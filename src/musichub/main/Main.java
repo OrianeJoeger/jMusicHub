@@ -8,6 +8,7 @@ import musichub.business.Chanson;
 import musichub.business.LivreAudio;
 import musichub.business.Playlist;
 import musichub.util.XmlReader;
+import musichub.util.XmlWriter;
 
 public class Main {
 
@@ -25,7 +26,7 @@ public class Main {
         this.playlists = reader.getPlaylists();
     }
 
-    private boolean commandsHandlding(String cmd) {
+    private boolean commandsHandlding(String cmd) throws Exception {
         boolean again = true;
 
         switch(cmd) {
@@ -40,6 +41,10 @@ public class Main {
                 break;
             case "playlists":
                 System.out.println(this.playlists);
+                break;
+            case "s":
+                XmlWriter writer = new XmlWriter();
+                writer.save(this.chansons, this.livresAudio, this.albums, this.playlists);
                 break;
             case "h":
                 this.menu();
@@ -57,7 +62,7 @@ public class Main {
     }
 
     private void menu () {
-        System.out.println("\nVoici la liste des commandes possibles : \n");
+        System.out.println("\nVoici la liste des commandes disponibles : \n");
         System.out.println("--------- AFFICHAGE ---------");
         System.out.println("albums       : lister les albums ");
         System.out.println("chansons     : lister les chansons ");
@@ -76,7 +81,7 @@ public class Main {
         System.out.println("q   :   Quitter le programme");
     }
 
-    private void run () {
+    private void run () throws Exception {
         Scanner sc = new Scanner(System.in);
         
         boolean again = true;
