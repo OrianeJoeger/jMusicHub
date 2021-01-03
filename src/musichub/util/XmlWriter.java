@@ -1,7 +1,9 @@
 package musichub.util;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -125,7 +127,10 @@ public class XmlWriter {
         }
     }
 
-    private void saveElements(Collection<Chanson> chansons, Collection<LivreAudio> livresaudios) throws Exception {
+    private void saveElements(List<Chanson> chansons, List<LivreAudio> livresaudios) throws Exception {
+        Collections.sort(chansons);
+        Collections.sort(livresaudios);
+        
         Document document = dBuilder.newDocument();
         Element elements = document.createElement("Elements");
         document.appendChild(elements);
@@ -143,7 +148,9 @@ public class XmlWriter {
         transformer.transform(domSource, result);
     }
 
-    private void saveAlbums(Collection<Album> albums) throws Exception {
+    private void saveAlbums(List<Album> albums) throws Exception {
+        Collections.sort(albums);
+        
         Element ealbum, eid, etitre, eduree, eartiste, edate;
 
         Document document = dBuilder.newDocument();
@@ -194,7 +201,8 @@ public class XmlWriter {
         transformer.transform(domSource, result);
     }
 
-    private void savePlaylists(Collection<Playlist> playlists) throws Exception {
+    private void savePlaylists(List<Playlist> playlists) throws Exception {
+        Collections.sort(playlists);
         Element eplaylist, eid, enom;
 
         Document document = dBuilder.newDocument();
@@ -247,7 +255,7 @@ public class XmlWriter {
         transformer.transform(domSource, result);
     }
     
-    public void save (Collection<Chanson> chansons, Collection<LivreAudio> livresaudios, Collection<Album> albums, Collection<Playlist> playlists)
+    public void save (List<Chanson> chansons, List<LivreAudio> livresaudios, List<Album> albums, List<Playlist> playlists)
     throws Exception {
         this.saveElements(chansons, livresaudios);
         this.saveAlbums(albums);

@@ -1,6 +1,7 @@
 package musichub.main;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -127,7 +128,7 @@ public class Main {
                     break;
             }
         }
-        
+
         //Création de la playlist
         Playlist playlist = new Playlist(id, nom, elements);
 
@@ -233,15 +234,19 @@ public class Main {
 
         switch(cmd) {
             case "albums":
+                Collections.sort(this.albums);
                 System.out.println(this.albums);
                 break;
             case "chansons":
+                Collections.sort(this.chansons);
                 System.out.println(this.chansons);
                 break;
             case "livres audio":
+                Collections.sort(this.livresAudio);
                 System.out.println(this.livresAudio);
                 break;
             case "playlists":
+                Collections.sort(this.playlists);
                 System.out.println(this.playlists);
                 break;
             case "c":
