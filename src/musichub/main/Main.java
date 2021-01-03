@@ -1,10 +1,13 @@
 package musichub.main;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 import musichub.business.Album;
+import musichub.business.Categorie;
 import musichub.business.Chanson;
+import musichub.business.Genre;
+import musichub.business.Langue;
 import musichub.business.LivreAudio;
 import musichub.business.Playlist;
 import musichub.util.XmlReader;
@@ -12,10 +15,10 @@ import musichub.util.XmlWriter;
 
 public class Main {
 
-    Collection<Chanson> chansons;
-    Collection<LivreAudio> livresAudio;
-    Collection<Album> albums;
-    Collection<Playlist> playlists;
+    List<Chanson> chansons;
+    List<LivreAudio> livresAudio;
+    List<Album> albums;
+    List<Playlist> playlists;
 
     public Main () throws Exception {
         XmlReader reader = new XmlReader();
@@ -26,7 +29,67 @@ public class Main {
         this.playlists = reader.getPlaylists();
     }
 
-    private boolean commandsHandlding(String cmd) throws Exception {
+    private Chanson newChanson(Scanner sc) {
+        System.out.print("\nEntrez un id (integer) $> ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un titre (string) $> ");
+        String titre = sc.nextLine();
+        System.out.print("Entrez une durée (secondes) $> ");
+        int duree = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un artiste (string) $> ");
+        String artiste = sc.nextLine();
+        System.out.print("Entrez un contenu (string) $> ");
+        String contenu = sc.nextLine();
+        System.out.print("Entrez un genre (JAZZ, CLASSIQUE, HIPHOP, ROCK, POP, RAP) $> ");
+        Genre genre = Genre.valueOf(sc.nextLine());
+        System.out.print("Entrez une date (aaaa-mm-jj) $> ");
+        String date = sc.nextLine();
+        System.out.println();
+
+        Chanson chanson = new Chanson(id, titre, duree, artiste, contenu, genre, date);
+
+        return chanson;
+    }
+
+    private LivreAudio newLivreAudio(Scanner sc) {
+        System.out.print("\nEntrez un id (integer) $> ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un titre (string) $> ");
+        String titre = sc.nextLine();
+        System.out.print("Entrez une durée (secondes) $> ");
+        int duree = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un auteur (string) $> ");
+        String auteur = sc.nextLine();
+        System.out.print("Entrez un contenu (string) $> ");
+        String contenu = sc.nextLine();
+        System.out.print("Entrez une langue (FRANCAIS, ANGLAIS, ITALIEN, ESPAGNOL, ALLEMAND) $> ");
+        Langue langue = Langue.valueOf(sc.nextLine());
+        System.out.print("Entrez une categorie (JEUNESSE, ROMAN, THEATRE, DISCOURS, DOCUMENTAIRE) $> ");
+        Categorie categorie = Categorie.valueOf(sc.nextLine());
+        System.out.println();
+
+        LivreAudio livreAudio = new LivreAudio(id, titre, duree, auteur, contenu, langue, categorie);
+
+        return livreAudio;
+    }
+
+    private void removePlaylist(Scanner sc) {
+        System.out.print("\nQuelle playlist souhaitez-vous supprimer (id) ? $> ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        
+        for (int i = 0; i < playlists.size(); i++) {
+            if (this.playlists.get(i).getId() == id) {
+                  this.playlists.remove(i);  
+            }
+        }
+    }
+
+    private boolean commandsHandlding(String cmd, Scanner sc) throws Exception {
         boolean again = true;
 
         switch(cmd) {
@@ -42,18 +105,50 @@ public class Main {
             case "playlists":
                 System.out.println(this.playlists);
                 break;
+            case "c":
+                System.out.println("\nAjout d'une nouvelle chanson :");
+                Chanson chanson = this.newChanson(sc);
+                this.chansons.add(chanson);
+                System.out.println(chanson);
+                System.out.println("La chanson a bien été ajoutée.");
+                break;
+            case "a":
+                // TODO :  rajout d’un nouvel album
+                break;
+            case "+":
+                // TODO :   rajout d’une chanson existante à un album
+                break;
+            case "l":
+                System.out.println("\nAjout d'un nouveau livre audio :");
+                LivreAudio livreAudio = this.newLivreAudio(sc);
+                this.livresAudio.add(livreAudio);
+                System.out.println(livreAudio);
+                System.out.println("Le livre audio a bien été ajouté.");
+                break;
+            case "p":
+                // TODO : création d’une nouvelle playlist à partir de chansons et livres audio existants
+
+                break;
+            case "-":
+                System.out.println("\nVoici vos playlists actuelles :");
+                System.out.println(this.playlists);
+                this.removePlaylist(sc);
+                System.out.println("\nLa playlist a bien été supprimée.");
+                
+                break;
             case "s":
                 XmlWriter writer = new XmlWriter();
                 writer.save(this.chansons, this.livresAudio, this.albums, this.playlists);
+                System.out.println("Les fichiers XML ont été mis à jour.");
                 break;
-            case "h":
+            case "h": 
                 this.menu();
                 break;
-            case "q":
+            case "q": 
                 again = false;
                 break;
             default:
-                System.out.println("Cette commande n'est pas prise en charge");
+                System.out.println("\nCette commande n'est pas prise en charge");
                 this.menu();
                 break;
             }
@@ -91,7 +186,7 @@ public class Main {
         while (again) {
             System.out.print("\nEntrez une commande $> ");
             cmd = sc.nextLine();
-            again =  this.commandsHandlding(cmd);
+            again =  this.commandsHandlding(cmd, sc);
         }
         sc.close();
     } 

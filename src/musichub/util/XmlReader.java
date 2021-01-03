@@ -96,7 +96,7 @@ public class XmlReader {
         return livresaudio;
     }
 
-    public Collection<Chanson> getChansons() throws Exception {
+    public List<Chanson> getChansons() throws Exception {
 
         List<Chanson> chansons = null;
 
@@ -109,9 +109,9 @@ public class XmlReader {
         return chansons;
     }
 
-    public Collection<LivreAudio> getLivresAudio() throws Exception {
+    public List<LivreAudio> getLivresAudio() throws Exception {
 
-        Collection<LivreAudio> livresaudio = null;
+        List<LivreAudio> livresaudio = null;
         Document doc = this.dBuilder.parse("files/elements.xml");
         doc.getDocumentElement().normalize();
 
@@ -121,7 +121,7 @@ public class XmlReader {
         return livresaudio;
     }
 
-    public Collection<Album> getAlbums() throws Exception {
+    public List<Album> getAlbums() throws Exception {
 
         String id, titre, duree, artiste, date;
         List<Chanson> chansons;
@@ -157,7 +157,7 @@ public class XmlReader {
         return albums;
     }
 
-    public Collection<Playlist> getPlaylists() throws Exception {
+    public List<Playlist> getPlaylists() throws Exception {
 
         String id, titre;
         List<Chanson> chansons = null;
