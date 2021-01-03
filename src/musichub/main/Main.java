@@ -29,6 +29,26 @@ public class Main {
         this.playlists = reader.getPlaylists();
     }
 
+    private Album newAlbum(Scanner sc) {
+        System.out.print("\nEntrez un id (integer) $> ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un titre (string) $> ");
+        String titre = sc.nextLine();
+        System.out.print("Entrez une durée (secondes) $> ");
+        int duree = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un artiste (string) $> ");
+        String artiste = sc.nextLine();
+        System.out.print("Entrez une date (aaaa-mm-jj) $> ");
+        String date = sc.nextLine();
+        System.out.println();
+
+        Album album = new Album(id, titre, duree, null, artiste, date);
+
+        return album;
+    }
+
     private Chanson newChanson(Scanner sc) {
         System.out.print("\nEntrez un id (integer) $> ");
         int id = sc.nextInt();
@@ -113,7 +133,11 @@ public class Main {
                 System.out.println("La chanson a bien été ajoutée.");
                 break;
             case "a":
-                // TODO :  rajout d’un nouvel album
+                System.out.println("\nAjout d'un nouvel album :");
+                Album album = this.newAlbum(sc);
+                this.albums.add(album);
+                System.out.println(album);
+                System.out.println("L'album a bien été ajouté.");
                 break;
             case "+":
                 // TODO :   rajout d’une chanson existante à un album
