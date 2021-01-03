@@ -246,7 +246,7 @@ public class Main {
                 System.out.println(this.livresAudio);
                 break;
             case "playlists":
-                Collections.sort(this.playlists);
+                Collections.sort(this.livresAudio);
                 System.out.println(this.playlists);
                 break;
             case "c":
