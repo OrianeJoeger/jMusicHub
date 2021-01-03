@@ -43,11 +43,7 @@ public class Album extends AbstractOeuvre implements Comparable<Album> {
     }
 
     public void addChanson (Chanson chanson) {
-        //TODO: ajouter une chanson à un album
-    }
-
-    public void removeChanson (Chanson chanson) {
-        //TODO: supprimer une chanson d'un album
+        this.chanson.add(chanson);
     }
 
     public String toString() {

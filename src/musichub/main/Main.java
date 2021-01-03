@@ -102,11 +102,45 @@ public class Main {
         int id = sc.nextInt();
         sc.nextLine();
         
-        for (int i = 0; i < playlists.size(); i++) {
+        for (int i = 0; i < this.playlists.size(); i++) {
             if (this.playlists.get(i).getId() == id) {
                   this.playlists.remove(i);  
             }
         }
+    }
+
+    private void addChansonToAlbum(Scanner sc) {
+        System.out.print("\nA quel album souhaitez-vous ajouter une chanson (id de l'album) ? $> ");
+        int idAlbum = sc.nextInt();
+        sc.nextLine();
+
+        int indexAlbum = 0;
+        for (int i = 0; i < this.albums.size(); i++) {
+            if (this.albums.get(i).getId() == idAlbum) {
+                indexAlbum = i;
+                System.out.println("\nVoici l'album selectionné : ");
+                System.out.println(this.albums.get(i));
+            }
+        }
+
+        System.out.println("\nVoici vos chansons actuelles :");
+        System.out.println(this.chansons);
+        System.out.print("\nQuelle chanson souhaitez-vous ajouter à l'album (id de la chanson) ? $> ");
+        int idChanson = sc.nextInt();
+        sc.nextLine();
+
+        Chanson chanson = null;
+        for (int i = 0; i < this.chansons.size(); i++) {
+            if (this.chansons.get(i).getId() == idChanson) {
+                chanson = this.chansons.get(i);
+                System.out.println("\nVoici la chanson selectionnée : ");
+                System.out.println(chanson);
+            }
+        }
+        this.albums.get(indexAlbum).addChanson(chanson);
+
+        System.out.println("\nVoici votre album mis à jour");
+        System.out.println(this.albums.get(indexAlbum));
     }
 
     private boolean commandsHandlding(String cmd, Scanner sc) throws Exception {
@@ -138,9 +172,13 @@ public class Main {
                 this.albums.add(album);
                 System.out.println(album);
                 System.out.println("L'album a bien été ajouté.");
+                System.out.println("Pour ajouter des chansons existantes à cet album, utilisez la commande '+'");
                 break;
             case "+":
-                // TODO :   rajout d’une chanson existante à un album
+                System.out.println("\nVoici vos albums actuels :");
+                System.out.println(this.albums);
+                this.addChansonToAlbum(sc);
+                System.out.println("\nLa chanson a bien été ajouté à l'album.");
                 break;
             case "l":
                 System.out.println("\nAjout d'un nouveau livre audio :");
@@ -151,7 +189,6 @@ public class Main {
                 break;
             case "p":
                 // TODO : création d’une nouvelle playlist à partir de chansons et livres audio existants
-
                 break;
             case "-":
                 System.out.println("\nVoici vos playlists actuelles :");
