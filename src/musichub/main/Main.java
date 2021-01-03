@@ -1,8 +1,11 @@
 package musichub.main;
 
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import musichub.business.IJouable;
 import musichub.business.Album;
 import musichub.business.Categorie;
 import musichub.business.Chanson;
@@ -47,6 +50,88 @@ public class Main {
         Album album = new Album(id, titre, duree, null, artiste, date);
 
         return album;
+    }
+
+    private Chanson addChansonToPlaylist(Scanner sc) {
+        System.out.println("\nVoici vos chansons actuelles :");
+        System.out.println(this.chansons);
+        System.out.print("\nQuelle chanson souhaitez-vous ajouter à votre playlist (id de la chanson) ? $> ");
+        int idChanson = sc.nextInt();
+        sc.nextLine();
+
+        Chanson chanson = null;
+        for (int i = 0; i < this.chansons.size(); i++) {
+            if (this.chansons.get(i).getId() == idChanson) {
+                chanson = this.chansons.get(i);
+                System.out.println("\nVoici la chanson selectionnée : ");
+                System.out.println(chanson);
+            }
+        }
+
+        return chanson;
+    }
+
+    private LivreAudio addLivreAudioToPlaylist(Scanner sc) {
+        System.out.println("\nVoici vos livres audio actuels :");
+        System.out.println(this.livresAudio);
+        System.out.print("\nQuelle livre audio souhaitez-vous ajouter à votre playlist (id du livre audio) ? $> ");
+        int idLivreAudio = sc.nextInt();
+        sc.nextLine();
+
+        LivreAudio livreaudio = null;
+        for (int i = 0; i < this.livresAudio.size(); i++) {
+            if (this.livresAudio.get(i).getId() == idLivreAudio) {
+                livreaudio = this.livresAudio.get(i);
+                System.out.println("\nVoici le livre audio selectionné : ");
+                System.out.println(livreaudio);
+            }
+        }
+
+        return livreaudio;
+    }
+
+    private Playlist newPlaylist(Scanner sc) {
+        //Caratéristiques de la playlist
+        System.out.print("\nEntrez un id (integer) $> ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Entrez un nom (string) $> ");
+        String nom = sc.nextLine();
+        System.out.println();
+
+
+        //Ajout d'élément à la playlist
+        int choix = 1;
+        Collection<IJouable> elements = new LinkedList<IJouable> ();
+        while (choix == 1 || choix == 2) {
+            System.out.println("\nSouhaitez-vous ajouter des elements à votre playlist ?");
+            System.out.println("1. Ajouter une chanson");
+            System.out.println("2. Ajouter un livre audio");
+            System.out.println("3. Ne plus rien ajouter");
+
+            System.out.print("\nVotre choix $> ");
+            choix = sc.nextInt();
+            sc.nextLine();
+
+            switch (choix) {
+                case 1:
+                    System.out.println("Ajoute une chanson à ta playlist");
+                    elements.add(this.addChansonToPlaylist(sc));
+                    break;
+                case 2:
+                    System.out.println("Ajoute un livre audio à ta playlist");
+                    elements.add(this.addLivreAudioToPlaylist(sc));
+                    break;
+                default:
+                    System.out.println("Félicitation ! Vous avez terminé d'ajouter des éléments à votre playlist");
+                    break;
+            }
+        }
+        
+        //Création de la playlist
+        Playlist playlist = new Playlist(id, nom, elements);
+
+        return playlist;
     }
 
     private Chanson newChanson(Scanner sc) {
@@ -188,7 +273,11 @@ public class Main {
                 System.out.println("Le livre audio a bien été ajouté.");
                 break;
             case "p":
-                // TODO : création d’une nouvelle playlist à partir de chansons et livres audio existants
+                System.out.println("\nCréation d'une nouvelle playlist:");
+                Playlist playlist = this.newPlaylist(sc);
+                this.playlists.add(playlist);
+                System.out.println(playlist);
+                System.out.println("La playlist a bien été créée.");
                 break;
             case "-":
                 System.out.println("\nVoici vos playlists actuelles :");
@@ -225,8 +314,8 @@ public class Main {
         System.out.println("livres audio : lister les livres audio ");
         System.out.println("playlists    : lister les playlists ");
         System.out.println("\n--------- AJOUT / SUPPRESSION ---------");
-        System.out.println("c   :   Ajouter une nouvelle chanson ");
-        System.out.println("a   :   Ajouter un nouvel album ");
+        System.out.println("c   :   Ajouter une nouvelle chanson");
+        System.out.println("a   :   Ajouter un nouvel album");
         System.out.println("+   :   Ajouter une chanson existante à un album");
         System.out.println("l   :   Ajouter un nouveau livre audio");
         System.out.println("p   :   Créer une nouvelle playlist à partir de chansons et livres audio existants");
